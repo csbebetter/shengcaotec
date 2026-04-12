@@ -9,40 +9,51 @@
 </head>
 <body>
   <div class="page-shell">
-    <header class="toolbar" aria-label="Page tools">
-      <div class="toolbar__meta">Academic CV</div>
-      <button class="toolbar__button" type="button" data-print-cv>Print / Save PDF</button>
-    </header>
-
     <main class="resume" aria-label="Curriculum vitae">
       <header class="hero">
         <div class="hero__photo-wrap">
-          <img class="hero__photo" src="assets/images/cs.jpg" alt="Portrait of Sheng Cao">
+          <img class="hero__photo" src="assets/images/cs.png" alt="Portrait of Sheng Cao">
         </div>
         <div class="hero__content">
-          <p class="hero__eyebrow">Curriculum Vitae</p>
           <h1 class="hero__name">Sheng Cao</h1>
-          <p class="hero__title">M.Sc. Student in Mechanical Engineering, Huazhong University of Science and Technology</p>
-          <p class="hero__affiliation">State Key Laboratory of Intelligent Manufacturing Equipment and Technology</p>
-
-          <div class="hero__links hero__links--stacked">
-            <a href="https://orcid.org/0009-0000-6252-6890" target="_blank" rel="noreferrer">ORCID: 0009-0000-6252-6890</a>
-            <span class="separator" aria-hidden="true">&#9671;</span>
-            <a href="https://www.webofscience.com/wos/author/record/PHP-3044-2026" target="_blank" rel="noreferrer">Web of Science</a>
-            <span class="separator" aria-hidden="true">&#9671;</span>
-            <a href="https://ieeexplore.ieee.org/author/964799704923107" target="_blank" rel="noreferrer">IEEE Xplore</a>
+          <div class="hero__identity">
+            <p class="hero__title">M.Sc. Student in Mechanical Engineering</p>
+            <p class="hero__institution">Huazhong University of Science and Technology</p>
+            <p class="hero__affiliation">State Key Laboratory of Intelligent Manufacturing Equipment and Technology</p>
           </div>
-          <div class="hero__links hero__links--stacked">
+
+          <div class="hero__contact-line" aria-label="Phone">
             <span>Phone: <a href="tel:+8618075643485">+86 180 7564 3485</a></span>
-            <span class="separator" aria-hidden="true">&#9671;</span>
+          </div>
+          <div class="hero__contact-line" aria-label="Email addresses">
             <span>Email: <a href="mailto:shengcaotec@foxmail.com">shengcaotec@foxmail.com</a></span>
+            <span class="separator" aria-hidden="true">&#9671;</span>
+            <span><a href="mailto:shengcaotec@gmail.com">shengcaotec@gmail.com</a></span>
           </div>
 
-          <p class="hero__summary">
-            Research focuses on large-scale spatial measurement, point cloud registration, and multi-sensor perception, with applications in robotics and large-scale measurement systems. Publications include <em>IEEE/ASME Transactions on Mechatronics</em> and <em>IEEE Transactions on Instrumentation and Measurement</em>.
-          </p>
+          <div class="hero__icons" aria-label="Academic profiles">
+            <a class="hero__icon-link hero__icon-link--orcid" href="https://orcid.org/0009-0000-6252-6890" target="_blank" rel="noreferrer" aria-label="ORCID">
+              <img src="assets/images/orcid.logo.icon.svg" alt="" aria-hidden="true">
+            </a>
+            <a class="hero__icon-link hero__icon-link--wos" href="https://www.webofscience.com/wos/author/record/PHP-3044-2026" target="_blank" rel="noreferrer" aria-label="Web of Science">
+              <img src="assets/images/wos.png" alt="" aria-hidden="true">
+            </a>
+            <a class="hero__icon-link hero__icon-link--ieee" href="https://ieeexplore.ieee.org/author/964799704923107" target="_blank" rel="noreferrer" aria-label="IEEE Xplore">
+              <img src="assets/images/ieee_logo_white.svg" alt="" aria-hidden="true">
+            </a>
+          </div>
+
         </div>
       </header>
+
+      <section class="cv-section" aria-labelledby="profile-heading">
+        <div class="cv-section__heading">
+          <h2 id="profile-heading">Profile</h2>
+        </div>
+        <p>
+          Research focuses on large-scale spatial measurement, point cloud registration, and multi-sensor perception, with applications in robotics and large-scale measurement systems. Publications include <em>IEEE/ASME Transactions on Mechatronics</em> and <em>IEEE Transactions on Instrumentation and Measurement</em>.
+        </p>
+      </section>
 
       <section class="cv-section" aria-labelledby="education-heading">
         <div class="cv-section__heading">

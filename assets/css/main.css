@@ -26,6 +26,7 @@ body {
   font-family: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
   color: var(--ink);
   background: linear-gradient(180deg, #f7f8fa 0%, #eef1f5 100%);
+  overflow-x: hidden;
 }
 
 a {
@@ -46,7 +47,16 @@ dd {
 }
 
 .page-shell {
+  position: relative;
+  z-index: 1;
   padding: 1.25rem 1rem 2rem;
+}
+
+.sakura-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .site-nav {
@@ -383,48 +393,86 @@ dd {
 }
 
 .gallery-hero__description {
-  max-width: 38rem;
+  max-width: 28rem;
   margin: 0.46rem 0 0;
   color: var(--muted);
 }
 
-.gallery-grid {
+.gallery-layout {
   margin-top: 1.2rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.85fr) minmax(14rem, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.gallery-column {
+  display: grid;
   gap: 1rem;
 }
 
+.gallery-column--side {
+  align-content: start;
+}
+
 .gallery-card {
-  min-height: 14rem;
-  padding: 1rem;
-  border: 1px dashed #cdd6e0;
-  border-radius: 0.9rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 247, 250, 0.95) 100%);
-}
-
-.gallery-card__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 9.2rem;
-  border-radius: 0.65rem;
-  background:
-    linear-gradient(135deg, #eef3f8 0%, #e3eaf2 100%);
-  color: #8a97a6;
-  font-size: 0.95rem;
+  flex-direction: column;
+  background: #f7f9fc;
+  box-shadow: 0 14px 28px rgba(24, 32, 42, 0.08);
 }
 
-.gallery-card__title {
-  margin: 0.88rem 0 0;
-  font-size: 1rem;
+.gallery-card--landscape .gallery-card__image {
+  aspect-ratio: 2.26 / 1;
 }
 
-.gallery-card__text {
-  margin: 0.3rem 0 0;
-  color: var(--muted);
-  font-size: 0.94rem;
+.gallery-card--portrait .gallery-card__image {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.gallery-column--side .gallery-card:first-child .gallery-card__image {
+  aspect-ratio: 4 / 5.8;
+}
+
+.gallery-column--side .gallery-card:first-child .gallery-card__image {
+  object-position: center 8%;
+}
+
+.gallery-column--side .gallery-card:last-child .gallery-card__image {
+  object-position: center 28%;
+}
+
+.gallery-card__image {
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  transition: transform 260ms ease, filter 260ms ease;
+}
+
+.gallery-card__caption {
+  margin: 0;
+  padding: 0.62rem 0.82rem 0.72rem;
+  color: #485565;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  background: #f7f9fc;
+}
+
+.gallery-card:hover .gallery-card__image,
+.gallery-card:focus-within .gallery-card__image {
+  transform: scale(1.02);
+  filter: saturate(1.02) contrast(1.02);
+}
+
+@media (max-width: 980px) {
+  .gallery-layout {
+    grid-template-columns: minmax(0, 1.4fr) minmax(12rem, 1fr);
+  }
 }
 
 @media (max-width: 780px) {
@@ -488,8 +536,12 @@ dd {
     padding: 1.4rem 1rem 1.2rem;
   }
 
-  .gallery-grid {
+  .gallery-layout {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-card__caption {
+    font-size: 0.9rem;
   }
 }
 

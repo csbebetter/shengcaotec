@@ -11,9 +11,6 @@
   <div class="page-shell">
     <main class="resume" aria-label="Curriculum vitae">
       <header class="hero">
-        <div class="hero__photo-wrap">
-          <img class="hero__photo" src="assets/images/cs.png" alt="Portrait of Sheng Cao">
-        </div>
         <div class="hero__content">
           <h1 class="hero__name">Sheng Cao</h1>
           <div class="hero__identity">
@@ -22,13 +19,15 @@
             <p class="hero__affiliation">State Key Laboratory of Intelligent Manufacturing Equipment and Technology</p>
           </div>
 
+          <div class="hero__divider" aria-hidden="true"></div>
+
           <div class="hero__contact-line" aria-label="Phone">
             <span>Phone: <a href="tel:+8618075643485">+86 180 7564 3485</a></span>
           </div>
           <div class="hero__contact-line" aria-label="Email addresses">
-            <span>Email: <a href="mailto:shengcaotec@foxmail.com">shengcaotec@foxmail.com</a></span>
+            <span>Email: <a href="mailto:shengcaotec@hust.edu.cn">shengcaotec@hust.edu.cn</a></span>
             <span class="separator" aria-hidden="true">&#9671;</span>
-            <span><a href="mailto:shengcaotec@gmail.com">shengcaotec@gmail.com</a></span>
+            <span><a href="mailto:shengcaotec@foxmail.com">shengcaotec@foxmail.com</a></span>
           </div>
 
           <div class="hero__icons" aria-label="Academic profiles">
@@ -44,6 +43,11 @@
           </div>
 
         </div>
+        <div class="hero__photo-wrap">
+          <div class="hero__photo-frame">
+            <img class="hero__photo" src="assets/images/cs.png" alt="Portrait of Sheng Cao">
+          </div>
+        </div>
       </header>
 
       <section class="cv-section" aria-labelledby="profile-heading">
@@ -51,7 +55,7 @@
           <h2 id="profile-heading">Profile</h2>
         </div>
         <p>
-          Research focuses on large-scale spatial measurement, point cloud registration, and multi-sensor perception, with applications in robotics and large-scale measurement systems. Publications include <em>IEEE/ASME Transactions on Mechatronics</em> and <em>IEEE Transactions on Instrumentation and Measurement</em>.
+          Research focuses on high-precision large-scale spatial localization and measurement, point cloud registration, and multi-sensor perception, with applications in robotics and large-scale measurement systems. Publications include <em>IEEE/ASME Transactions on Mechatronics</em> and <em>IEEE Transactions on Instrumentation and Measurement</em>.
         </p>
       </section>
 
@@ -99,7 +103,6 @@
             <h3>Global Point Cloud Registration for Aircraft Skin in Distributed Measurement Systems (Undergraduate Thesis Continuation)</h3>
             <p class="entry__date">Feb. 2024 -- Present</p>
           </div>
-          <p class="entry__meta">HUST</p>
           <ul class="entry__list">
             <li>Developed a distributed measurement framework for global registration of aircraft skin point clouds using a 6-DoF cooperative target in large-scale measurement environments.</li>
             <li>Proposed a laser-plane and Lie algebra-based pose optimization method on Lie groups for robust, accurate, and efficient 6-DoF estimation in distributed measurement systems.</li>
@@ -112,7 +115,6 @@
             <h3>Pipeline Inspection and End-Face Measurement System Using Rotational Line Laser (PipeChina Collaboration)</h3>
             <p class="entry__date">Jun. 2025 -- Present</p>
           </div>
-          <p class="entry__meta">HUST</p>
           <ul class="entry__list">
             <li>Led the project as the primary technical contributor, developing a pipeline inspection system based on rotational line-laser scanning for large-scale industrial measurement.</li>
             <li>Designed a high-precision point cloud processing pipeline with elliptical-cylinder fitting and geometric parameter extraction (major/minor axes) for accurate end-face modeling.</li>
@@ -125,7 +127,6 @@
             <h3>Laser Tracker-Based Large-Scale Aircraft Skin Measurement and Point Cloud Stitching (COMAC Collaboration)</h3>
             <p class="entry__date">Mar. 2025 -- Apr. 2026</p>
           </div>
-          <p class="entry__meta">HUST</p>
           <ul class="entry__list">
             <li>Led system integration and software development for a multi-sensor measurement system combining laser tracker, AGV platform, and 3D scanners.</li>
             <li>Developed calibration and coordination algorithms for multi-sensor systems, and implemented global point cloud stitching for accurate reconstruction of large-scale aircraft skin surfaces.</li>
@@ -138,7 +139,6 @@
             <h3>Distributed Measurement System Orientation and Error Modeling</h3>
             <p class="entry__date">Feb. 2023 -- Jul. 2025</p>
           </div>
-          <p class="entry__meta">HUST</p>
           <ul class="entry__list">
             <li>Co-developed orientation methods for distributed measurement systems using improved bundle adjustment and Lie algebra, including algorithm design and experimental validation.</li>
             <li>Developed error-field modeling methods based on laser tracker measurements for distributed systems, including system error identification and compensation.</li>
@@ -168,21 +168,18 @@
           <ol class="publication-list">
             <li>
               Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.
-              Orientation of Distributed Measurement Systems Using Improved Bundle Adjustment and Lie Algebra.
+              <a href="https://doi.org/10.1109/TMECH.2024.3490737" target="_blank" rel="noreferrer">Orientation of Distributed Measurement Systems Using Improved Bundle Adjustment and Lie Algebra</a>.
               <em>IEEE/ASME Transactions on Mechatronics</em>, 2024.
-              <a href="https://doi.org/10.1109/TMECH.2024.3490737" target="_blank" rel="noreferrer">doi:10.1109/TMECH.2024.3490737</a>
             </li>
             <li>
               Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.
-              Construction of Error Field for Distributed Measurement Systems Using Laser Tracker.
+              <a href="https://doi.org/10.1109/TIM.2025.3573000" target="_blank" rel="noreferrer">Construction of Error Field for Distributed Measurement Systems Using Laser Tracker</a>.
               <em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.
-              <a href="https://doi.org/10.1109/TIM.2025.3573000" target="_blank" rel="noreferrer">doi:10.1109/TIM.2025.3573000</a>
             </li>
             <li>
               Tian, Y. M., Li, W. L., Zhang, H. W., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.
-              Global Precision Control for Field Large-Scale Measurement Based on Uniformly Minimum Variance Unbiased Estimate.
+              <a href="https://doi.org/10.1109/TIM.2025.3601248" target="_blank" rel="noreferrer">Global Precision Control for Field Large-Scale Measurement Based on Uniformly Minimum Variance Unbiased Estimate</a>.
               <em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.
-              <a href="https://doi.org/10.1109/TIM.2025.3601248" target="_blank" rel="noreferrer">doi:10.1109/TIM.2025.3601248</a>
             </li>
           </ol>
         </div>
@@ -192,7 +189,7 @@
           <ol class="publication-list">
             <li>
               Tian, Y. M., <strong>Cao, Sheng</strong>, Li, W. L., and Xu, W.
-              Modeling and Analysis of Measurement Uncertainty for Distributed Measurement Systems.
+              <a href="https://ieeexplore.ieee.org/document/10900205" target="_blank" rel="noreferrer">Modeling and Analysis of Measurement Uncertainty for Distributed Measurement Systems</a>.
               <em>Proceedings of ICAIRC</em>, 2024.
             </li>
           </ol>

@@ -126,17 +126,21 @@ dd {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 1.02in;
+  height: 1.36in;
   padding: 0.14rem;
   background: linear-gradient(180deg, #f1f4f8 0%, #e8edf3 100%);
   border-radius: 0.2rem;
+  overflow: hidden;
 }
 
 .hero__photo {
-  width: 1.02in;
-  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border: 0;
   box-shadow: none;
+  display: block;
 }
 
 .hero__content {
@@ -216,6 +220,7 @@ dd {
   padding: 0 0.45rem;
   border: 1px solid var(--rule);
   border-radius: 999px;
+  color: #6f859a;
   background: #fafbfd;
   transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, opacity 160ms ease;
 }
@@ -245,6 +250,21 @@ dd {
   width: 100%;
   height: 0.78rem;
   opacity: 1;
+}
+
+.hero__icon-link--scholar img {
+  width: 1.28rem;
+  height: 1.28rem;
+}
+
+.hero__icon-link--linkedin img {
+  width: 1.08rem;
+  height: 1.08rem;
+}
+
+.hero__icon-link--linkedin img,
+.hero__icon-link--scholar img {
+  opacity: 0.78;
 }
 
 .hero__icon-link:hover,
@@ -497,10 +517,14 @@ dd {
   }
 
   .hero__photo {
-    width: min(9rem, 38vw);
+    width: 100%;
+    height: 100%;
   }
 
   .hero__photo-frame {
+    width: min(9rem, 38vw);
+    height: auto;
+    aspect-ratio: 3 / 4;
     padding: 0.16rem;
   }
 

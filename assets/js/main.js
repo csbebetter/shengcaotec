@@ -16,14 +16,14 @@ class SakuraPetal {
   reset(width, height, initial = false) {
     this.x = initial ? Math.random() * width : Math.random() * width;
     this.y = initial ? Math.random() * height : -40 - Math.random() * 120;
-    this.size = 9 + Math.random() * 13;
-    this.speedY = 0.9 + Math.random() * 1.5;
-    this.speedX = -1.2 + Math.random() * 2.4;
+    this.size = 7 + Math.random() * 9;
+    this.speedY = 0.45 + Math.random() * 0.8;
+    this.speedX = -0.5 + Math.random() * 1;
     this.swing = Math.random() * Math.PI * 2;
-    this.swingSpeed = 0.014 + Math.random() * 0.02;
+    this.swingSpeed = 0.006 + Math.random() * 0.01;
     this.rotation = Math.random() * Math.PI * 2;
-    this.rotationSpeed = -0.016 + Math.random() * 0.032;
-    this.opacity = 0.58 + Math.random() * 0.28;
+    this.rotationSpeed = -0.008 + Math.random() * 0.016;
+    this.opacity = 0.22 + Math.random() * 0.18;
     this.active = true;
   }
 
@@ -34,7 +34,7 @@ class SakuraPetal {
 
     this.swing += this.swingSpeed;
     this.rotation += this.rotationSpeed;
-    this.x += this.speedX + Math.sin(this.swing) * 1.15;
+    this.x += this.speedX + Math.sin(this.swing) * 0.35;
     this.y += this.speedY;
 
     const outOfBounds =
@@ -165,7 +165,7 @@ class SakuraField {
 
 window.addEventListener("DOMContentLoaded", () => {
   const sakuraField = new SakuraField({
-    count: 34,
+    count: 14,
     resetLimit: -1,
   });
 

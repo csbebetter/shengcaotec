@@ -3,257 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic CV of Sheng Cao">
-  <title>Sheng Cao | Academic CV</title>
+  <meta name="description" content="Personal homepage of Sheng Cao">
+  <title>Sheng Cao | Home</title>
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <div class="page-shell">
-    <nav class="site-nav" aria-label="Primary">
-      <a class="site-nav__link site-nav__link--active" href="index.html#academic-cv">Academic CV</a>
-      <a class="site-nav__link" href="pictures.html">Pictures</a>
-    </nav>
+  <div class="page-shell page-shell--home">
+    <button class="theme-toggle theme-toggle--floating" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+      <span class="theme-toggle__icon" aria-hidden="true"></span>
+    </button>
 
-    <main class="resume" id="academic-cv" aria-label="Curriculum vitae">
-      <header class="hero">
-        <div class="hero__content">
-          <h1 class="hero__name">Sheng Cao</h1>
-          <div class="hero__identity">
-            <p class="hero__title">M.Sc. Student in Mechanical Engineering</p>
-            <p class="hero__institution">Huazhong University of Science and Technology</p>
-            <p class="hero__affiliation">State Key Laboratory of Intelligent Manufacturing Equipment and Technology</p>
+    <main class="home-page" aria-label="Personal homepage">
+      <aside class="profile-card" aria-label="Profile">
+        <img class="profile-card__photo" src="assets/images/cs.webp" alt="Portrait of Sheng Cao" width="402" height="602" loading="eager" fetchpriority="high" decoding="async">
+        <h1 class="profile-card__name">Sheng Cao</h1>
+        <p class="profile-card__role">M.Sc. Student in Mechanical Engineering</p>
+        <p class="profile-card__org">Huazhong University of Science and Technology</p>
+
+        <div class="profile-card__links profile-card__links--icons" aria-label="Profile links">
+          <a class="profile-icon-link profile-icon-link--orcid" href="https://orcid.org/0009-0000-6252-6890" target="_blank" rel="noreferrer" aria-label="ORCID">
+            <img src="assets/images/orcid.logo.icon.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="profile-icon-link profile-icon-link--wos" href="https://www.webofscience.com/wos/author/record/PHP-3044-2026" target="_blank" rel="noreferrer" aria-label="Web of Science">
+            <img src="assets/images/wos.webp" alt="" aria-hidden="true">
+          </a>
+          <a class="profile-icon-link profile-icon-link--ieee" href="https://ieeexplore.ieee.org/author/964799704923107" target="_blank" rel="noreferrer" aria-label="IEEE Xplore">
+            <img src="assets/images/ieee_logo_white.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="profile-icon-link profile-icon-link--linkedin" href="https://www.linkedin.com/in/sheng-cao-b729283b8" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <span class="brand-icon brand-icon--linkedin" aria-hidden="true">in</span>
+          </a>
+          <a class="profile-icon-link" href="https://scholar.google.com/citations?user=f88wUC8AAAAJ&amp;hl=zh-CN&amp;authuser=1&amp;citsig=ADQXK0zCnZWGcap-tGW0e943XRvX" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+            <svg class="brand-icon brand-icon--scholar" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="#4285f4" d="M12 2 1.8 9.7 12 17.4 22.2 9.7 12 2Z"/>
+              <path fill="#7baaf7" d="M5.2 13.1 12 18.2l6.8-5.1v3.25c0 2.1-3.05 3.65-6.8 3.65s-6.8-1.55-6.8-3.65V13.1Z"/>
+              <path fill="#2f6fdb" d="M12 17.4 1.8 9.7 12 2v15.4Z" opacity="0.72"/>
+            </svg>
+          </a>
+        </div>
+
+        <nav class="profile-card__pages" aria-label="Site pages">
+          <p class="profile-card__pages-title">Explore</p>
+          <a class="profile-page-link" href="CV.html">
+            <span class="profile-page-link__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M7 3.75h6.2L17 7.55v12.7H7V3.75Z"/>
+                <path d="M13 3.95V8h4"/>
+                <path d="M9.4 12h5.2M9.4 15h5.2"/>
+              </svg>
+            </span>
+            <span class="profile-page-link__text">
+              <span class="profile-page-link__title">CV</span>
+            </span>
+            <span class="profile-page-link__arrow" aria-hidden="true">></span>
+          </a>
+          <a class="profile-page-link" href="pictures.html">
+            <span class="profile-page-link__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4.5 6.2h15v11.6h-15V6.2Z"/>
+                <path d="m6.8 16 3.9-4.2 2.9 3 1.8-1.9 2.1 3.1"/>
+                <path d="M15.8 9.5h.01"/>
+              </svg>
+            </span>
+            <span class="profile-page-link__text">
+              <span class="profile-page-link__title">Life Gallery</span>
+            </span>
+            <span class="profile-page-link__arrow" aria-hidden="true">></span>
+          </a>
+        </nav>
+      </aside>
+
+      <div class="home-content">
+        <section class="home-intro" aria-labelledby="intro-heading">
+          <h2 id="intro-heading"><span aria-hidden="true">👋</span> Welcome to Sheng Cao's home page</h2>
+          <div class="home-intro__panel">
+            <p>
+              I am a master's student in Mechanical Engineering at <a href="https://www.hust.edu.cn/" target="_blank" rel="noreferrer">Huazhong University of Science and Technology</a>, working in the State Key Laboratory of Intelligent Manufacturing Equipment and Technology.
+            </p>
+            <p>
+              My research focuses on high-precision large-scale spatial localization and measurement, point cloud registration, multi-sensor perception, and robotics for industrial measurement systems.
+            </p>
+            <p>
+              I am especially interested in robust 6-DoF pose estimation, laser tracker aided measurement, distributed measurement systems, and practical point cloud processing pipelines for large-scale engineering scenarios.
+            </p>
+          </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="news-heading">
+          <div class="home-section__heading">
+            <h2 id="news-heading"><span aria-hidden="true">🔥</span> News</h2>
+          </div>
+          <div class="news-card">
+            <article class="news-item">
+              <time datetime="2026-04">2026.04</time>
+              <p>Completed laser tracker-based aircraft skin measurement and point cloud stitching work for a COMAC collaboration.</p>
+            </article>
+            <article class="news-item">
+              <time datetime="2025-07">2025.07</time>
+              <p>Chinese invention patent CN116482605B was granted.</p>
+            </article>
+            <article class="news-item">
+              <time datetime="2025-06">2025.06</time>
+              <p>Started work on a rotational line-laser pipeline inspection and end-face measurement system.</p>
+            </article>
+            <article class="news-item">
+              <time datetime="2025">2025</time>
+              <p>Published work on error-field construction and global precision control in <em>IEEE Transactions on Instrumentation and Measurement</em>.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="projects-heading">
+          <div class="home-section__heading">
+            <h2 id="projects-heading"><span aria-hidden="true">🧭</span> Selected Projects</h2>
           </div>
 
-          <div class="hero__divider" aria-hidden="true"></div>
+          <div class="project-list">
+            <article class="project-card">
+              <img class="project-card__image" src="assets/photos/life/lab.webp" alt="Laboratory measurement environment" width="2893" height="1279" loading="lazy" decoding="async">
+              <div class="project-card__body">
+                <p class="project-card__meta">Large-scale measurement / Point cloud registration</p>
+                <h3>Global Point Cloud Registration for Aircraft Skin</h3>
+                <p>
+                  Developed a distributed measurement framework using a 6-DoF cooperative target for aircraft skin point cloud registration in large-scale measurement environments.
+                </p>
+                <p class="project-card__status">Under review at <em>IEEE/ASME Transactions on Mechatronics</em> with major revision.</p>
+              </div>
+            </article>
 
-          <div class="hero__contact-line" aria-label="Phone">
-            <span>Phone: <a href="tel:+8618075643485">+86 180 7564 3485</a></span>
+            <article class="project-card">
+              <img class="project-card__image" src="assets/photos/life/always_on_the_route.webp" alt="Field route during project work" width="1024" height="2316" loading="lazy" decoding="async">
+              <div class="project-card__body">
+                <p class="project-card__meta">Industrial inspection / Laser scanning</p>
+                <h3>Pipeline Inspection and End-Face Measurement System</h3>
+                <p>
+                  Led the development of a rotational line-laser scanning system for pipe inspection, including point cloud processing, elliptical-cylinder fitting, and pipe pairing logic.
+                </p>
+                <p class="project-card__status">PipeChina collaboration, Jun. 2025 -- Present.</p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img class="project-card__image" src="assets/photos/life/The_sunset_after_work.webp" alt="Worksite after project work" width="2893" height="1279" loading="lazy" decoding="async">
+              <div class="project-card__body">
+                <p class="project-card__meta">Multi-sensor systems / Robotics</p>
+                <h3>Laser Tracker-Based Aircraft Skin Measurement</h3>
+                <p>
+                  Built software and workflows for a measurement system combining laser tracker, AGV platform, and 3D scanners, supporting calibration, coordination, and global stitching.
+                </p>
+                <p class="project-card__status">COMAC collaboration, Mar. 2025 -- Apr. 2026.</p>
+              </div>
+            </article>
           </div>
-          <div class="hero__contact-line" aria-label="Email addresses">
-            <span>Email: <a href="mailto:shengcaotec@hust.edu.cn">shengcaotec@hust.edu.cn</a></span>
-            <span class="separator" aria-hidden="true">&#9671;</span>
-            <span><a href="mailto:shengcaotec@foxmail.com">shengcaotec@foxmail.com</a></span>
+        </section>
+
+        <section class="home-section" aria-labelledby="publications-heading">
+          <div class="home-section__heading">
+            <h2 id="publications-heading"><span aria-hidden="true">🎯</span> Selected Publications</h2>
           </div>
-
-          <div class="hero__icons" aria-label="Academic profiles">
-            <a class="hero__icon-link hero__icon-link--orcid" href="https://orcid.org/0009-0000-6252-6890" target="_blank" rel="noreferrer" aria-label="ORCID">
-              <img src="assets/images/orcid.logo.icon.svg" alt="" aria-hidden="true">
-            </a>
-            <a class="hero__icon-link hero__icon-link--wos" href="https://www.webofscience.com/wos/author/record/PHP-3044-2026" target="_blank" rel="noreferrer" aria-label="Web of Science">
-              <img src="assets/images/wos.webp" alt="" aria-hidden="true">
-            </a>
-            <a class="hero__icon-link hero__icon-link--ieee" href="https://ieeexplore.ieee.org/author/964799704923107" target="_blank" rel="noreferrer" aria-label="IEEE Xplore">
-              <img src="assets/images/ieee_logo_white.svg" alt="" aria-hidden="true">
-            </a>
-            <a class="hero__icon-link hero__icon-link--linkedin" href="https://www.linkedin.com/in/sheng-cao-b729283b8" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <img src="assets/images/linkedin.svg" alt="" aria-hidden="true">
-            </a>
-            <a class="hero__icon-link hero__icon-link--scholar" href="https://scholar.google.com/citations?user=f88wUC8AAAAJ&amp;hl=zh-CN&amp;authuser=1&amp;citsig=ADQXK0zCnZWGcap-tGW0e943XRvX" target="_blank" rel="noreferrer" aria-label="Google Scholar">
-              <img src="assets/images/google-scholar.svg" alt="" aria-hidden="true">
-            </a>
+          <div class="publication-card-list">
+            <article class="publication-card">
+              <h3><a href="https://doi.org/10.1109/TMECH.2024.3490737" target="_blank" rel="noreferrer">Orientation of Distributed Measurement Systems Using Improved Bundle Adjustment and Lie Algebra</a></h3>
+              <p>Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.</p>
+              <p><em>IEEE/ASME Transactions on Mechatronics</em>, 2024.</p>
+            </article>
+            <article class="publication-card">
+              <h3><a href="https://doi.org/10.1109/TIM.2025.3573000" target="_blank" rel="noreferrer">Construction of Error Field for Distributed Measurement Systems Using Laser Tracker</a></h3>
+              <p>Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.</p>
+              <p><em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.</p>
+            </article>
+            <article class="publication-card">
+              <h3><a href="https://doi.org/10.1109/TIM.2025.3601248" target="_blank" rel="noreferrer">Global Precision Control for Field Large-Scale Measurement Based on Uniformly Minimum Variance Unbiased Estimate</a></h3>
+              <p>Tian, Y. M., Li, W. L., Zhang, H. W., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.</p>
+              <p><em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.</p>
+            </article>
           </div>
+        </section>
 
-        </div>
-        <div class="hero__photo-wrap">
-          <div class="hero__photo-frame" style="width:1.02in;height:1.36in;">
-            <img class="hero__photo" src="assets/images/cs.webp" alt="Portrait of Sheng Cao" width="402" height="602" loading="eager" fetchpriority="high" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <section class="home-section" aria-labelledby="contact-heading">
+          <div class="home-section__heading">
+            <h2 id="contact-heading"><span aria-hidden="true">📬</span> Contact</h2>
           </div>
-        </div>
-      </header>
-
-      <section class="cv-section" aria-labelledby="profile-heading">
-        <div class="cv-section__heading">
-          <h2 id="profile-heading">Profile</h2>
-        </div>
-        <p>
-          Research focuses on high-precision large-scale spatial localization and measurement, point cloud registration, and multi-sensor perception, with applications in robotics and large-scale measurement systems. Publications include <em>IEEE/ASME Transactions on Mechatronics</em> and <em>IEEE Transactions on Instrumentation and Measurement</em>.
-        </p>
-      </section>
-
-      <section class="cv-section" aria-labelledby="education-heading">
-        <div class="cv-section__heading">
-          <h2 id="education-heading">Education</h2>
-        </div>
-
-        <article class="entry">
-          <div class="entry__header">
-            <h3>Huazhong University of Science and Technology (HUST)</h3>
-            <p class="entry__date">Sep. 2024 -- Present</p>
+          <div class="contact-card">
+            <p><strong>Email</strong></p>
+            <p><a href="mailto:shengcaotec@hust.edu.cn">shengcaotec@hust.edu.cn</a></p>
+            <p><a href="mailto:shengcaotec@gmail.com">shengcaotec@gmail.com</a></p>
+            <p><a href="mailto:shengcaotec@foxmail.com">shengcaotec@foxmail.com</a></p>
           </div>
-          <p class="entry__subtitle">M.Sc. in Mechanical Engineering</p>
-          <p>GPA: 3.86/4.0</p>
-          <p>Recommended for postgraduate study without entrance examination</p>
-          <p class="entry__detail"><em>Related Courses: Matrix Theory, Robotics, Operations Research</em></p>
-        </article>
+        </section>
 
-        <article class="entry">
-          <div class="entry__header">
-            <h3>Huazhong University of Science and Technology (HUST)</h3>
-            <p class="entry__date">Sep. 2020 -- Jun. 2024</p>
+        <section class="home-section" aria-labelledby="services-heading">
+          <div class="home-section__heading">
+            <h2 id="services-heading"><span aria-hidden="true">🚚</span> Services</h2>
           </div>
-          <p class="entry__subtitle">B.Eng. in Mechanical Engineering</p>
-          <p>GPA: 3.72/4.0</p>
-          <p class="entry__detail"><em>Related Courses: Computer Vision, Optimization Methods, Linear Algebra</em></p>
-        </article>
-      </section>
-
-      <section class="cv-section" aria-labelledby="interests-heading">
-        <div class="cv-section__heading">
-          <h2 id="interests-heading">Research Interests</h2>
-        </div>
-        <p>Point Cloud Processing, Robotics, Large-Scale Spatial Measurement</p>
-      </section>
-
-      <section class="cv-section" aria-labelledby="experience-heading">
-        <div class="cv-section__heading">
-          <h2 id="experience-heading">Research Experience</h2>
-        </div>
-
-        <article class="entry">
-          <div class="entry__header">
-            <h3>Global Point Cloud Registration for Aircraft Skin in Distributed Measurement Systems (Undergraduate Thesis Continuation)</h3>
-            <p class="entry__date">Feb. 2024 -- Present</p>
+          <div class="service-card">
+            <h3>Reviewer</h3>
+            <div class="service-card__rule" aria-hidden="true"></div>
+            <p class="service-card__label">Journals</p>
+            <ul>
+              <li><em>IEEE/ASME Transactions on Mechatronics</em> (TMECH)</li>
+            </ul>
           </div>
-          <ul class="entry__list">
-            <li>Developed a distributed measurement framework for global registration of aircraft skin point clouds using a 6-DoF cooperative target in large-scale measurement environments.</li>
-            <li>Proposed a laser-plane and Lie algebra-based pose optimization method on Lie groups for robust, accurate, and efficient 6-DoF estimation in distributed measurement systems.</li>
-            <li>Under review (major revision), <em>IEEE/ASME Transactions on Mechatronics</em>.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__header">
-            <h3>Pipeline Inspection and End-Face Measurement System Using Rotational Line Laser (PipeChina Collaboration)</h3>
-            <p class="entry__date">Jun. 2025 -- Present</p>
-          </div>
-          <ul class="entry__list">
-            <li>Led the project as the primary technical contributor, developing a pipeline inspection system based on rotational line-laser scanning for large-scale industrial measurement.</li>
-            <li>Designed a high-precision point cloud processing pipeline with elliptical-cylinder fitting and geometric parameter extraction (major/minor axes) for accurate end-face modeling.</li>
-            <li>Developed a multi-pipe grading and sequencing algorithm to optimize pipe pairing.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__header">
-            <h3>Laser Tracker-Based Large-Scale Aircraft Skin Measurement and Point Cloud Stitching (COMAC Collaboration)</h3>
-            <p class="entry__date">Mar. 2025 -- Apr. 2026</p>
-          </div>
-          <ul class="entry__list">
-            <li>Led system integration and software development for a multi-sensor measurement system combining laser tracker, AGV platform, and 3D scanners.</li>
-            <li>Developed calibration and coordination algorithms for multi-sensor systems, and implemented global point cloud stitching for accurate reconstruction of large-scale aircraft skin surfaces.</li>
-            <li>Designed measurement and data processing workflows based on precise positioning from laser tracker measurements to support high-precision industrial inspection.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__header">
-            <h3>Distributed Measurement System Orientation and Error Modeling</h3>
-            <p class="entry__date">Feb. 2023 -- Jul. 2025</p>
-          </div>
-          <ul class="entry__list">
-            <li>Co-developed orientation methods for distributed measurement systems using improved bundle adjustment and Lie algebra, including algorithm design and experimental validation.</li>
-            <li>Developed error-field modeling methods based on laser tracker measurements for distributed systems, including system error identification and compensation.</li>
-            <li>Contributed to global precision control for large-scale field measurement by modeling measurement uncertainty and designing weighting strategies, with supporting analysis and validation.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="cv-section" aria-labelledby="publications-heading">
-        <div class="cv-section__heading">
-          <h2 id="publications-heading">Publications</h2>
-        </div>
-
-        <div class="publication-group">
-          <h3 class="publication-group__title">Under Review</h3>
-          <ol class="publication-list">
-            <li>
-              <strong>Cao, Sheng</strong>, Tian, Y. M., Zhang, H. W., Xu, W., and Li, W. L.
-              Global Point Cloud Registration for Aircraft Skin Using a 6-DoF Cooperative Target in Distributed Measurement System.
-              <em>Under review at IEEE/ASME Transactions on Mechatronics</em> (major revision).
-            </li>
-          </ol>
-        </div>
-
-        <div class="publication-group">
-          <h3 class="publication-group__title">Journal Articles</h3>
-          <ol class="publication-list">
-            <li>
-              Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.
-              <a href="https://doi.org/10.1109/TMECH.2024.3490737" target="_blank" rel="noreferrer">Orientation of Distributed Measurement Systems Using Improved Bundle Adjustment and Lie Algebra</a>.
-              <em>IEEE/ASME Transactions on Mechatronics</em>, 2024.
-            </li>
-            <li>
-              Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.
-              <a href="https://doi.org/10.1109/TIM.2025.3573000" target="_blank" rel="noreferrer">Construction of Error Field for Distributed Measurement Systems Using Laser Tracker</a>.
-              <em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.
-            </li>
-            <li>
-              Tian, Y. M., Li, W. L., Zhang, H. W., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.
-              <a href="https://doi.org/10.1109/TIM.2025.3601248" target="_blank" rel="noreferrer">Global Precision Control for Field Large-Scale Measurement Based on Uniformly Minimum Variance Unbiased Estimate</a>.
-              <em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.
-            </li>
-          </ol>
-        </div>
-
-        <div class="publication-group">
-          <h3 class="publication-group__title">Conference Papers</h3>
-          <ol class="publication-list">
-            <li>
-              Tian, Y. M., <strong>Cao, Sheng</strong>, Li, W. L., and Xu, W.
-              <a href="https://ieeexplore.ieee.org/document/10900205" target="_blank" rel="noreferrer">Modeling and Analysis of Measurement Uncertainty for Distributed Measurement Systems</a>.
-              <em>Proceedings of ICAIRC</em>, 2024.
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="cv-section" aria-labelledby="patents-heading">
-        <div class="cv-section__heading">
-          <h2 id="patents-heading">Patents</h2>
-        </div>
-        <div class="compact-list">
-          <p><strong>Chinese Invention Patent</strong>, CN116482605B, Granted Jul. 29, 2025.<br><em>RFID-Based Indoor Full-Positioning Method for Forklifts.</em><br>First inventor.</p>
-          <p><strong>Chinese Utility Model Patent</strong>, CN220820214U, 2024.<br><em>Measuring Device for Robot Tail-End Pose Compensation.</em></p>
-          <p><strong>Chinese Invention Patent</strong>, CN117109581A, 2023.<br><em>Mobile Robot Self-Positioning Navigation Method Based on RFID.</em><br>First inventor. (Application published)</p>
-        </div>
-      </section>
-
-      <section class="cv-section" aria-labelledby="service-heading">
-        <div class="cv-section__heading">
-          <h2 id="service-heading">Academic Service</h2>
-        </div>
-        <p>Reviewer for <em>IEEE/ASME Transactions on Mechatronics</em></p>
-      </section>
-
-      <section class="cv-section" aria-labelledby="awards-heading">
-        <div class="cv-section__heading">
-          <h2 id="awards-heading">Honors and Awards</h2>
-        </div>
-        <div class="award-list">
-          <p><span>First-Class Academic Scholarship, HUST</span><span>(2025)</span></p>
-          <p><span>First Prize, Challenge Cup National Undergraduate Academic Competition (China)</span><span>(2023)</span></p>
-          <p><span>Second Prize, China Mathematical Contest in Modeling (Provincial)</span><span>(2022)</span></p>
-        </div>
-      </section>
-
-      <section class="cv-section" aria-labelledby="skills-heading">
-        <div class="cv-section__heading">
-          <h2 id="skills-heading">Technical Skills</h2>
-        </div>
-        <dl class="skills-grid">
-          <dt>Programming</dt>
-          <dd>C++, MATLAB, Python, Qt, OpenCV, PCL, VTK, ROS</dd>
-
-          <dt>Technical Areas</dt>
-          <dd>Point cloud processing, 3D vision, large-scale measurement systems</dd>
-
-          <dt>Methods</dt>
-          <dd>Optimization, Lie algebra, pose estimation, multi-sensor calibration</dd>
-
-          <dt>Development</dt>
-          <dd>Linux, CMake, cross-platform scientific software development</dd>
-        </dl>
-      </section>
+        </section>
+      </div>
     </main>
   </div>
 

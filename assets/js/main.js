@@ -1,8 +1,26 @@
 const printButton = document.querySelector("[data-print-cv]");
+const themeToggle = document.querySelector("[data-theme-toggle]");
 
 if (printButton) {
   printButton.addEventListener("click", () => {
     window.print();
+  });
+}
+
+if (themeToggle) {
+  const setTheme = (theme) => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+    const isDark = theme === "dark";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  };
+
+  setTheme(localStorage.getItem("theme") || "light");
+
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.dataset.theme || "light";
+    setTheme(currentTheme === "dark" ? "light" : "dark");
   });
 }
 

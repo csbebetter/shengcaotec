@@ -922,6 +922,40 @@ dd {
   margin-top: 0.85rem;
 }
 
+.interest-block {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.38rem 0.5rem;
+}
+
+.interest-block__label {
+  margin: 0;
+  color: var(--home-muted);
+  font-size: 0.86rem;
+  font-weight: 400;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.interest-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.52rem;
+  padding: 0 0.54rem;
+  border: 1px solid rgba(44, 154, 139, 0.18);
+  border-radius: 999px;
+  background: rgba(44, 154, 139, 0.1);
+  color: #247669;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
 .home-intro__panel a,
 .publication-card a,
 .contact-card a {
@@ -1048,7 +1082,7 @@ dd {
   object-fit: cover;
   display: block;
   border-radius: 0.32rem;
-  background: #e8edf3;
+  background: #ffffff;
 }
 
 .project-card:nth-child(2) .project-card__image {
@@ -1587,6 +1621,16 @@ html[data-theme="dark"] .contact-card a {
     color: var(--home-blue);
 }
 
+html[data-theme="dark"] .interest-tags span {
+  border-color: rgba(98, 211, 191, 0.22);
+  background: rgba(98, 211, 191, 0.1);
+  color: #8ee2d4;
+}
+
+html[data-theme="dark"] .interest-block__label {
+  color: var(--home-muted);
+}
+
 html[data-theme="dark"] .service-card__rule {
   background: rgba(218, 232, 240, 0.14);
 }
@@ -1616,7 +1660,7 @@ html[data-theme="dark"] .news-card::-webkit-scrollbar-thumb:hover {
 }
 
 html[data-theme="dark"] .project-card__image {
-    background: #263445;
+    background: #ffffff;
 }
 
 html[data-theme="dark"] .resume,

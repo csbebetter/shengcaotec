@@ -1,5 +1,6 @@
 const printButton = document.querySelector("[data-print-cv]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
+const newsList = document.querySelector("[data-news-list]");
 
 if (printButton) {
   printButton.addEventListener("click", () => {
@@ -23,6 +24,43 @@ if (themeToggle) {
     setTheme(currentTheme === "dark" ? "light" : "dark");
   });
 }
+
+const renderNewsItem = (item) => {
+  const article = document.createElement("article");
+  article.className = "news-item";
+
+  const time = document.createElement("time");
+  time.dateTime = item.datetime;
+  time.textContent = item.label;
+
+  const text = document.createElement("p");
+  text.textContent = item.text;
+
+  article.append(time, text);
+  return article;
+};
+
+const loadNews = async () => {
+  if (!newsList) {
+    return;
+  }
+
+  newsList.textContent = "Loading news...";
+
+  try {
+    const response = await fetch("assets/data/news.json", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`Failed to load news: ${response.status}`);
+    }
+
+    const items = await response.json();
+    newsList.replaceChildren(...items.map(renderNewsItem));
+  } catch (error) {
+    console.error(error);
+    newsList.textContent = "Unable to load news right now.";
+  }
+};
 
 class SakuraPetal {
   constructor(width, height, resetLimit) {
@@ -182,6 +220,8 @@ class SakuraField {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  loadNews();
+
   const sakuraField = new SakuraField({
     count: 14,
     resetLimit: -1,

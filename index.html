@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,8 +18,9 @@
 
     <main class="home-page" aria-label="Personal homepage">
       <aside class="profile-card" aria-label="Profile">
-        <img class="profile-card__photo" src="assets/images/cs.webp" alt="Portrait of Sheng Cao" width="402" height="602" loading="eager" fetchpriority="high" decoding="async">
+        <img class="profile-card__photo" src="assets/images/cs1.webp" alt="Portrait of Sheng Cao" width="402" height="602" loading="eager" fetchpriority="high" decoding="async">
         <h1 class="profile-card__name">Sheng Cao</h1>
+        <p class="profile-card__name-cn">曹胜</p>
         <p class="profile-card__role">M.Sc. Student in Mechanical Engineering</p>
         <p class="profile-card__org">Huazhong University of Science and Technology</p>
 
@@ -33,9 +34,6 @@
           <a class="profile-icon-link profile-icon-link--ieee" href="https://ieeexplore.ieee.org/author/964799704923107" target="_blank" rel="noreferrer" aria-label="IEEE Xplore">
             <img src="assets/images/ieee_logo_white.svg" alt="" aria-hidden="true">
           </a>
-          <a class="profile-icon-link profile-icon-link--linkedin" href="https://www.linkedin.com/in/sheng-cao-b729283b8" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <span class="brand-icon brand-icon--linkedin" aria-hidden="true">in</span>
-          </a>
           <a class="profile-icon-link" href="https://scholar.google.com/citations?user=f88wUC8AAAAJ&amp;hl=zh-CN&amp;authuser=1&amp;citsig=ADQXK0zCnZWGcap-tGW0e943XRvX" target="_blank" rel="noreferrer" aria-label="Google Scholar">
             <svg class="brand-icon brand-icon--scholar" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path fill="#4285f4" d="M12 2 1.8 9.7 12 17.4 22.2 9.7 12 2Z"/>
@@ -43,82 +41,62 @@
               <path fill="#2f6fdb" d="M12 17.4 1.8 9.7 12 2v15.4Z" opacity="0.72"/>
             </svg>
           </a>
+          <a class="profile-icon-link profile-icon-link--linkedin" href="https://www.linkedin.com/in/sheng-cao-b729283b8" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <span class="brand-icon brand-icon--linkedin" aria-hidden="true">in</span>
+          </a>
         </div>
 
         <nav class="profile-card__pages" aria-label="Site pages">
           <p class="profile-card__pages-title">Explore</p>
           <a class="profile-page-link" href="CV.html">
-            <span class="profile-page-link__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M7 3.75h6.2L17 7.55v12.7H7V3.75Z"/>
-                <path d="M13 3.95V8h4"/>
-                <path d="M9.4 12h5.2M9.4 15h5.2"/>
-              </svg>
+            <span class="profile-page-link__main">
+              <span class="profile-page-link__icon" aria-hidden="true">
+                <img src="assets/images/CV.svg" alt="" aria-hidden="true">
+              </span>
+              <span class="profile-page-link__text">
+                <span class="profile-page-link__title">CV</span>
+              </span>
             </span>
-            <span class="profile-page-link__text">
-              <span class="profile-page-link__title">CV</span>
-            </span>
-            <span class="profile-page-link__arrow" aria-hidden="true">></span>
           </a>
           <a class="profile-page-link" href="pictures.html">
-            <span class="profile-page-link__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4.5 6.2h15v11.6h-15V6.2Z"/>
-                <path d="m6.8 16 3.9-4.2 2.9 3 1.8-1.9 2.1 3.1"/>
-                <path d="M15.8 9.5h.01"/>
-              </svg>
+            <span class="profile-page-link__main">
+              <span class="profile-page-link__icon" aria-hidden="true">
+                <img src="assets/images/Gallery.svg" alt="" aria-hidden="true">
+              </span>
+              <span class="profile-page-link__text">
+                <span class="profile-page-link__title">Gallery</span>
+              </span>
             </span>
-            <span class="profile-page-link__text">
-              <span class="profile-page-link__title">Life Gallery</span>
-            </span>
-            <span class="profile-page-link__arrow" aria-hidden="true">></span>
           </a>
         </nav>
       </aside>
 
       <div class="home-content">
         <section class="home-intro" aria-labelledby="intro-heading">
-          <h2 id="intro-heading"><span aria-hidden="true">👋</span> Welcome to Sheng Cao's home page</h2>
+          <h2 id="intro-heading"><span aria-hidden="true">&#128075;</span> Welcome to Sheng Cao's home page</h2>
           <div class="home-intro__panel">
             <p>
-              I am a master's student in Mechanical Engineering at <a href="https://www.hust.edu.cn/" target="_blank" rel="noreferrer">Huazhong University of Science and Technology</a>, working in the State Key Laboratory of Intelligent Manufacturing Equipment and Technology.
+              I am a master's student in Mechanical Engineering at Huazhong University of Science and Technology, working in the State Key Laboratory of Intelligent Manufacturing Equipment and Technology.
             </p>
             <p>
               My research focuses on high-precision large-scale spatial localization and measurement, point cloud registration, multi-sensor perception, and robotics for industrial measurement systems.
             </p>
             <p>
-              I am especially interested in robust 6-DoF pose estimation, laser tracker aided measurement, distributed measurement systems, and practical point cloud processing pipelines for large-scale engineering scenarios.
+              I am particularly interested in <strong>robotics</strong>, <strong>intelligent perception</strong>, and <strong>spatial measurement and localization</strong>, and I am always eager to explore related research directions and practical applications.
             </p>
           </div>
         </section>
 
         <section class="home-section" aria-labelledby="news-heading">
           <div class="home-section__heading">
-            <h2 id="news-heading"><span aria-hidden="true">🔥</span> News</h2>
+            <h2 id="news-heading"><span aria-hidden="true">&#128311;</span> News</h2>
           </div>
-          <div class="news-card">
-            <article class="news-item">
-              <time datetime="2026-04">2026.04</time>
-              <p>Completed laser tracker-based aircraft skin measurement and point cloud stitching work for a COMAC collaboration.</p>
-            </article>
-            <article class="news-item">
-              <time datetime="2025-07">2025.07</time>
-              <p>Chinese invention patent CN116482605B was granted.</p>
-            </article>
-            <article class="news-item">
-              <time datetime="2025-06">2025.06</time>
-              <p>Started work on a rotational line-laser pipeline inspection and end-face measurement system.</p>
-            </article>
-            <article class="news-item">
-              <time datetime="2025">2025</time>
-              <p>Published work on error-field construction and global precision control in <em>IEEE Transactions on Instrumentation and Measurement</em>.</p>
-            </article>
-          </div>
+          <div class="news-card" data-news-list aria-live="polite"></div>
         </section>
 
         <section class="home-section" aria-labelledby="projects-heading">
           <div class="home-section__heading">
-            <h2 id="projects-heading"><span aria-hidden="true">🧭</span> Selected Projects</h2>
+            <h2 id="projects-heading"><span aria-hidden="true">&#128300;</span> Projects</h2>
           </div>
 
           <div class="project-list">
@@ -157,35 +135,85 @@
                 <p class="project-card__status">COMAC collaboration, Mar. 2025 -- Apr. 2026.</p>
               </div>
             </article>
+
+            <article class="project-card">
+              <img class="project-card__image" src="assets/photos/life/lab.webp" alt="Distributed measurement research setting" width="2893" height="1279" loading="lazy" decoding="async">
+              <div class="project-card__body">
+                <p class="project-card__meta">Distributed measurement / Error modeling</p>
+                <h3>Distributed Measurement System Orientation and Error Modeling</h3>
+                <p>
+                  Worked on orientation methods and error-field modeling for distributed measurement systems, including bundle adjustment, Lie algebra based modeling, and uncertainty-aware analysis.
+                </p>
+                <p class="project-card__status">Feb. 2023 -- Jul. 2025.</p>
+              </div>
+            </article>
           </div>
         </section>
 
         <section class="home-section" aria-labelledby="publications-heading">
           <div class="home-section__heading">
-            <h2 id="publications-heading"><span aria-hidden="true">🎯</span> Selected Publications</h2>
+            <h2 id="publications-heading"><span aria-hidden="true">&#127942;</span> Publications</h2>
           </div>
           <div class="publication-card-list">
             <article class="publication-card">
+              <p class="publication-card__category">Under Review</p>
+              <h3>Global Point Cloud Registration for Aircraft Skin Using a 6-DoF Cooperative Target in Distributed Measurement System</h3>
+              <p><strong>Cao, Sheng</strong>, Tian, Y. M., Zhang, H. W., Xu, W., and Li, W. L.</p>
+              <p><em>Under review at IEEE/ASME Transactions on Mechatronics</em> (major revision).</p>
+            </article>
+            <article class="publication-card">
+              <p class="publication-card__category">Journal Articles</p>
               <h3><a href="https://doi.org/10.1109/TMECH.2024.3490737" target="_blank" rel="noreferrer">Orientation of Distributed Measurement Systems Using Improved Bundle Adjustment and Lie Algebra</a></h3>
               <p>Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.</p>
               <p><em>IEEE/ASME Transactions on Mechatronics</em>, 2024.</p>
             </article>
             <article class="publication-card">
+              <p class="publication-card__category">Journal Articles</p>
               <h3><a href="https://doi.org/10.1109/TIM.2025.3573000" target="_blank" rel="noreferrer">Construction of Error Field for Distributed Measurement Systems Using Laser Tracker</a></h3>
               <p>Tian, Y. M., Li, W. L., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.</p>
               <p><em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.</p>
             </article>
             <article class="publication-card">
+              <p class="publication-card__category">Journal Articles</p>
               <h3><a href="https://doi.org/10.1109/TIM.2025.3601248" target="_blank" rel="noreferrer">Global Precision Control for Field Large-Scale Measurement Based on Uniformly Minimum Variance Unbiased Estimate</a></h3>
               <p>Tian, Y. M., Li, W. L., Zhang, H. W., <strong>Cao, Sheng</strong>, Xu, W., and Ding, H.</p>
               <p><em>IEEE Transactions on Instrumentation and Measurement</em>, 2025.</p>
+            </article>
+            <article class="publication-card">
+              <p class="publication-card__category">Conference Papers</p>
+              <h3><a href="https://ieeexplore.ieee.org/document/10900205" target="_blank" rel="noreferrer">Modeling and Analysis of Measurement Uncertainty for Distributed Measurement Systems</a></h3>
+              <p>Tian, Y. M., <strong>Cao, Sheng</strong>, Li, W. L., and Xu, W.</p>
+              <p><em>Proceedings of ICAIRC</em>, 2024.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="home-section" aria-labelledby="patents-heading">
+          <div class="home-section__heading">
+            <h2 id="patents-heading"><span aria-hidden="true">&#128196;</span> Patents</h2>
+          </div>
+          <div class="publication-card-list">
+            <article class="publication-card">
+              <h3>Chinese Invention Patent, CN116482605B</h3>
+              <p><em>RFID-Based Indoor Full-Positioning Method for Forklifts.</em></p>
+              <p>Granted Jul. 29, 2025. First inventor.</p>
+            </article>
+            <article class="publication-card">
+              <h3>Chinese Utility Model Patent, CN220820214U</h3>
+              <p><em>Measuring Device for Robot Tail-End Pose Compensation.</em></p>
+              <p>2024. Student first inventor; second inventor.</p>
+            </article>
+            <article class="publication-card">
+              <h3>Chinese Invention Patent, CN117109581A</h3>
+              <p><em>Mobile Robot Self-Positioning Navigation Method Based on RFID.</em></p>
+              <p>2023. First inventor. (Application published)</p>
             </article>
           </div>
         </section>
 
         <section class="home-section" aria-labelledby="contact-heading">
           <div class="home-section__heading">
-            <h2 id="contact-heading"><span aria-hidden="true">📬</span> Contact</h2>
+            <h2 id="contact-heading"><span aria-hidden="true">&#128231;</span> Contact</h2>
           </div>
           <div class="contact-card">
             <p><strong>Email</strong></p>
@@ -197,7 +225,7 @@
 
         <section class="home-section" aria-labelledby="services-heading">
           <div class="home-section__heading">
-            <h2 id="services-heading"><span aria-hidden="true">🚚</span> Services</h2>
+            <h2 id="services-heading"><span aria-hidden="true">&#129534;</span> Services</h2>
           </div>
           <div class="service-card">
             <h3>Reviewer</h3>

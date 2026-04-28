@@ -34,7 +34,36 @@ const renderNewsItem = (item) => {
   time.textContent = item.label;
 
   const text = document.createElement("p");
-  text.textContent = item.text;
+  if (item.icon) {
+    const icon = document.createElement("span");
+    icon.className = "news-item__icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = item.icon;
+    text.append(icon, " ");
+  }
+
+  const parts = item.parts || [item.text || ""];
+
+  for (const part of parts) {
+    if (typeof part === "string") {
+      text.append(part);
+      continue;
+    }
+
+    if (part?.type === "link") {
+      const link = document.createElement("a");
+      link.href = part.href;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = part.text;
+      text.append(link);
+      continue;
+    }
+
+    if (part?.text) {
+      text.append(part.text);
+    }
+  }
 
   article.append(time, text);
   return article;

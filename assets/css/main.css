@@ -236,6 +236,21 @@ dd {
   margin-top: 0.56rem;
 }
 
+.hero__contact-line a,
+.contact-card a,
+.publication-card h3 a {
+  text-decoration: none;
+}
+
+.hero__contact-line a:hover,
+.hero__contact-line a:focus-visible,
+.contact-card a:hover,
+.contact-card a:focus-visible,
+.publication-card h3 a:hover,
+.publication-card h3 a:focus-visible {
+  text-decoration: none;
+}
+
 .hero__icons {
   display: flex;
   align-items: center;

@@ -938,6 +938,18 @@ dd {
   margin-top: 0.85rem;
 }
 
+.intro-work-list {
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--home-muted);
+  font-size: 0.96rem;
+}
+
+.intro-work-list li {
+  margin: 0.22rem 0;
+  padding-left: 0.12rem;
+}
+
 .interest-block {
   margin-top: 0.9rem;
   display: flex;
@@ -1134,6 +1146,11 @@ dd {
   margin: 0.55rem 0 0;
 }
 
+.method-key {
+  color: var(--home-muted);
+  box-shadow: inset 0 -0.12em 0 rgba(44, 154, 139, 0.2);
+}
+
 .project-card__status {
   margin-top: 0.7rem;
   color: var(--home-muted);
@@ -1202,6 +1219,28 @@ dd {
 
 .service-card li {
   margin: 0.28rem 0;
+}
+
+.visitor-map {
+  margin-top: 3.1rem;
+}
+
+.visitor-map__widget {
+  width: min(100%, 21rem);
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.visitor-map__widget a,
+.visitor-map__widget img {
+  display: block;
+}
+
+.visitor-map__widget img {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 980px) {
@@ -1510,12 +1549,18 @@ html[data-theme="dark"] .publication-card h3 {
 html[data-theme="dark"] .profile-card__role,
 html[data-theme="dark"] .profile-card__org,
 html[data-theme="dark"] .home-intro__panel p,
+html[data-theme="dark"] .intro-work-list,
 html[data-theme="dark"] .news-item p,
 html[data-theme="dark"] .project-card p,
 html[data-theme="dark"] .publication-card p,
 html[data-theme="dark"] .service-card ul,
 html[data-theme="dark"] .contact-card p {
     color: var(--home-muted);
+}
+
+html[data-theme="dark"] .method-key {
+  color: var(--home-muted);
+  box-shadow: inset 0 -0.12em 0 rgba(98, 211, 191, 0.22);
 }
 
 html[data-theme="dark"] .profile-card__photo {

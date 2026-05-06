@@ -414,6 +414,11 @@ dd {
   margin-bottom: 0.28rem;
 }
 
+.cv-key {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
 .publication-group__title {
   font-size: 0.98rem;
 }

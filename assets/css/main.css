@@ -385,6 +385,10 @@ dd {
   font-weight: 700;
 }
 
+.entry__header h3 {
+  min-width: 0;
+}
+
 .entry__date {
   margin: 0;
   white-space: nowrap;
@@ -412,6 +416,14 @@ dd {
 .entry__list li,
 .publication-list li {
   margin-bottom: 0.28rem;
+}
+
+@media (min-width: 781px) {
+  .entry__header h3 {
+    font-size: 0.95rem;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
 }
 
 .cv-key {
@@ -1652,6 +1664,11 @@ html[data-theme="dark"] .profile-card__pages-title {
 
 html[data-theme="dark"] .profile-page-link__icon {
   color: var(--home-teal);
+}
+
+html[data-theme="dark"] .profile-page-link__icon-image--blog {
+  filter: invert(73%) sepia(39%) saturate(449%) hue-rotate(122deg) brightness(93%) contrast(88%);
+  opacity: 1;
 }
 
 .profile-page-link__icon--contact {

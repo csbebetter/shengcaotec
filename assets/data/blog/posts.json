@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "geometric-perception-notes",
+    "title": "Notes on Geometric Perception for Large-Scale Robotic Systems",
+    "date": "May 8, 2026",
+    "category": "Research Notes",
+    "summary": "A short reflection on why geometric consistency, calibration, and uncertainty matter when perception systems leave controlled lab environments.",
+    "readingTime": "4 min read",
+    "tags": ["3D Perception", "Calibration", "Robotics"]
+  },
+  {
+    "slug": "research-workflow-notes",
+    "title": "A Practical Research Workflow from Prototype to Manuscript",
+    "date": "May 8, 2026",
+    "category": "Workflow",
+    "summary": "A compact example of how to move from an experimental idea to a repeatable implementation and a clearer paper draft.",
+    "readingTime": "3 min read",
+    "tags": ["Research", "Writing", "Engineering"]
+  }
+]

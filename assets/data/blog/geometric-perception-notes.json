@@ -1,0 +1,33 @@
+{
+  "title": "Notes on Geometric Perception for Large-Scale Robotic Systems",
+  "date": "May 8, 2026",
+  "category": "Research Notes",
+  "summary": "A short reflection on why geometric consistency, calibration, and uncertainty matter when perception systems leave controlled lab environments.",
+  "readingTime": "4 min read",
+  "tags": ["3D Perception", "Calibration", "Robotics"],
+  "sections": [
+    {
+      "heading": "Why geometry still matters",
+      "paragraphs": [
+        "Large-scale robotic perception is often described through sensors and algorithms, but the practical bottleneck is usually geometric consistency. A system may collect dense point clouds, accurate poses, or high-resolution images, yet the final reconstruction depends on whether all observations share a reliable spatial reference.",
+        "For example, a rigid transformation can be written inline as \\( T \\in SE(3) \\), which is compact but still makes the assumed motion model explicit.",
+        "This is especially visible in aircraft surface reconstruction, mobile scanning, and structured field environments. Small calibration errors can become visible as global deformation, misalignment, or unstable downstream estimation.",
+        "A simple registration objective can be expressed as \\[ \\min_{R,t} \\sum_i \\left\\| \\mathbf{p}_i - (R\\mathbf{q}_i + t) \\right\\|^2 \\], where the residuals summarize point-wise geometric consistency."
+      ]
+    },
+    {
+      "heading": "Useful habits",
+      "points": [
+        "Treat calibration as part of the perception pipeline, not as a one-time preprocessing step.",
+        "Record coordinate frames, transformation directions, and units explicitly in code and experiment logs.",
+        "Evaluate global consistency with independent checks instead of relying only on local residuals."
+      ]
+    },
+    {
+      "heading": "Open direction",
+      "paragraphs": [
+        "A useful research direction is to connect geometric optimization with uncertainty-aware decision making. Instead of producing a single fused result, the system can expose where the reconstruction is reliable and where additional observations are needed."
+      ]
+    }
+  ]
+}

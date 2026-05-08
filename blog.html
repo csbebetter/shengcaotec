@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog posts by Sheng Cao">
+  <title>Sheng Cao | Blog</title>
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="return-home" href="index.html" aria-label="Return to home">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M10.8 5.2 4 12l6.8 6.8M5 12h15"/>
+        </svg>
+      </a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </nav>
+
+    <main class="blog-page" aria-label="Blog">
+      <header class="blog-hero">
+        <p class="blog-hero__eyebrow">Blog</p>
+        <h1 class="blog-hero__title">Notes and Essays</h1>
+        <p class="blog-hero__description">
+          Short writing on research, engineering practice, and personal learning.
+        </p>
+      </header>
+
+      <section class="blog-index" aria-labelledby="blog-index-heading">
+        <h2 id="blog-index-heading">All Posts</h2>
+        <div class="blog-post-list" data-blog-list></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
+</body>
+</html>

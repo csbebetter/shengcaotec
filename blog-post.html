@@ -29,7 +29,19 @@
     </main>
   </div>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/blog.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/blog.js"></script>
 </body>
 </html>

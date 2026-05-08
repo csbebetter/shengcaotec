@@ -104,6 +104,12 @@ const renderArticle = (post) => {
 
   blogArticle.replaceChildren(header, body);
   document.title = `Sheng Cao | ${post.title}`;
+
+  if (window.MathJax?.typesetPromise) {
+    window.MathJax.typesetPromise([blogArticle]).catch((error) => {
+      console.error("MathJax typesetting failed:", error);
+    });
+  }
 };
 
 const loadBlogArticle = async () => {

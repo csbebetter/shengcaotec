@@ -78,7 +78,7 @@ const loadNews = async () => {
   newsList.textContent = "Loading news...";
 
   try {
-    const response = await fetch("assets/data/news.json", { cache: "no-store" });
+    const response = await fetch("assets/data/news.json", { cache: "default" });
 
     if (!response.ok) {
       throw new Error(`Failed to load news: ${response.status}`);

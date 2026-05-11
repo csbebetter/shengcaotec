@@ -8,25 +8,132 @@
   "sections": [
     {
       "heading": "Why geometry still matters",
-      "paragraphs": [
-        "Large-scale robotic perception is often described through sensors and algorithms, but the practical bottleneck is usually geometric consistency. A system may collect dense point clouds, accurate poses, or high-resolution images, yet the final reconstruction depends on whether all observations share a reliable spatial reference.",
-        "For example, a rigid transformation can be written inline as \\( T \\in SE(3) \\), which is compact but still makes the assumed motion model explicit.",
-        "This is especially visible in aircraft surface reconstruction, mobile scanning, and structured field environments. Small calibration errors can become visible as global deformation, misalignment, or unstable downstream estimation.",
-        "A simple registration objective can be expressed as \\[ \\min_{R,t} \\sum_i \\left\\| \\mathbf{p}_i - (R\\mathbf{q}_i + t) \\right\\|^2 \\], where the residuals summarize point-wise geometric consistency."
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Large-scale robotic perception is often described through sensors and algorithms, but the practical bottleneck is usually geometric consistency. A system may collect dense point clouds, accurate poses, or high-resolution images, yet the final reconstruction depends on whether all observations share a reliable spatial reference."
+        },
+        {
+          "type": "paragraph",
+          "text": "For example, a rigid transformation can be written inline as \\( T \\in SE(3) \\), which is compact but still makes the assumed motion model explicit."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is especially visible in aircraft surface reconstruction, mobile scanning, and structured field environments. A representative setup is shown in [[fig:measurement-pipeline]]. Small calibration errors can become visible as global deformation, misalignment, or unstable downstream estimation."
+        },
+        {
+          "type": "figure",
+          "tag": "measurement-pipeline",
+          "src": "assets/photos/Project/COMAC.webp",
+          "alt": "Aircraft surface reconstruction workflow with measurement equipment and point cloud results.",
+          "maxWidth": "31rem",
+          "align": "center",
+          "caption": "A representative large-scale aircraft surface measurement workflow, where geometric consistency across sensing devices determines the quality of the final reconstruction."
+        },
+        {
+          "type": "paragraph",
+          "text": "A simple registration objective can be expressed as \\[ \\min_{R,t} \\sum_i \\left\\| \\mathbf{p}_i - (R\\mathbf{q}_i + t) \\right\\|^2 \\], where the residuals summarize point-wise geometric consistency."
+        },
+        {
+          "type": "paragraph",
+          "text": "Different sensing contexts often share the same geometric concerns while exposing them through distinct surface structures, as illustrated in [[fig:surface-comparison]]."
+        },
+        {
+          "type": "figure-group",
+          "tag": "surface-comparison",
+          "columns": 2,
+          "maxWidth": "42rem",
+          "images": [
+            {
+              "src": "assets/photos/Project/COMAC.webp",
+              "alt": "Aircraft surface measurement scene.",
+              "caption": "(a) Aircraft skin measurement."
+            },
+            {
+              "src": "assets/photos/Project/PipeChina.webp",
+              "alt": "Pipeline inspection reconstruction scene.",
+              "caption": "(b) Structured pipe inspection."
+            }
+          ],
+          "caption": "Two large-scale perception scenarios where calibration quality strongly affects downstream reconstruction consistency."
+        }
       ]
     },
     {
       "heading": "Useful habits",
-      "points": [
-        "Treat calibration as part of the perception pipeline, not as a one-time preprocessing step.",
-        "Record coordinate frames, transformation directions, and units explicitly in code and experiment logs.",
-        "Evaluate global consistency with independent checks instead of relying only on local residuals."
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "Treat calibration as part of the perception pipeline, not as a one-time preprocessing step.",
+            "Record coordinate frames, transformation directions, and units explicitly in code and experiment logs.",
+            "Evaluate global consistency with independent checks instead of relying only on local residuals."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "In practice, I find the sanity checks in [[tbl:consistency-checks]] more useful than adding one more local residual metric, because they reveal whether the whole pipeline shares a stable spatial reference."
+        },
+        {
+          "type": "table",
+          "tag": "consistency-checks",
+          "align": "center",
+          "tableWidth": "100%",
+          "tableLayout": "fixed",
+          "columnWidths": [
+            "22%",
+            "30%",
+            "48%"
+          ],
+          "headerHeight": "3.1rem",
+          "rowHeights": [
+            "3.4rem",
+            "3.7rem",
+            "3.8rem"
+          ],
+          "columns": [
+            "Check",
+            "Purpose",
+            "Typical Failure If Ignored"
+          ],
+          "rows": [
+            [
+              "Frame naming and direction",
+              "Prevent sign errors and inverted transforms",
+              {
+                "text": "Point clouds align locally but drift globally.",
+                "minWidth": "15rem"
+              }
+            ],
+            [
+              "Unit consistency",
+              {
+                "text": "Keep calibration, reconstruction, and evaluation in the same scale.",
+                "align": "left"
+              },
+              {
+                "text": "Pose estimates appear correct, but the error term \\( \\|\\mathbf{e}\\|_2 \\) becomes misleading across stages.",
+                "height": "4.4rem",
+                "verticalAlign": "middle"
+              }
+            ],
+            [
+              "Independent geometric validation",
+              "Verify the reconstruction outside the optimization objective",
+              "The system overfits the chosen metric and hides structural bias"
+            ]
+          ],
+          "caption": "A compact set of checks for maintaining geometric consistency throughout a large-scale perception workflow."
+        }
       ]
     },
     {
       "heading": "Open direction",
-      "paragraphs": [
-        "A useful research direction is to connect geometric optimization with uncertainty-aware decision making. Instead of producing a single fused result, the system can expose where the reconstruction is reliable and where additional observations are needed."
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "A useful research direction is to connect geometric optimization with uncertainty-aware decision making. Instead of producing a single fused result, the system can expose where the reconstruction is reliable and where additional observations are needed."
+        }
       ]
     }
   ]

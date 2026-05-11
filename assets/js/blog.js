@@ -1,5 +1,8 @@
 const blogList = document.querySelector("[data-blog-list]");
 const blogArticle = document.querySelector("[data-blog-article]");
+const blogHero = document.querySelector("[data-blog-hero]");
+const blogIndex = document.querySelector("[data-blog-index]");
+const returnHomeLink = document.querySelector(".return-home");
 
 const createTextElement = (tagName, className, text) => {
   const element = document.createElement(tagName);
@@ -24,7 +27,7 @@ const renderTags = (tags = []) => {
 const renderBlogCard = (post) => {
   const card = document.createElement("a");
   card.className = "blog-card";
-  card.href = `blog-post.html?post=${encodeURIComponent(post.slug)}`;
+  card.href = `blog.html?post=${encodeURIComponent(post.slug)}`;
 
   card.append(createTextElement("p", "blog-card__category", post.category));
   card.append(createTextElement("h3", "", post.title));
@@ -119,8 +122,15 @@ const loadBlogArticle = async () => {
 
   const slug = new URLSearchParams(window.location.search).get("post");
   if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
-    blogArticle.replaceChildren(createTextElement("p", "blog-error", "Article not found."));
     return;
+  }
+
+  blogHero?.setAttribute("hidden", "");
+  blogIndex?.setAttribute("hidden", "");
+  blogArticle.removeAttribute("hidden");
+  if (returnHomeLink) {
+    returnHomeLink.href = "blog.html";
+    returnHomeLink.setAttribute("aria-label", "Return to blog");
   }
 
   try {

@@ -4,6 +4,7 @@
   background: var(--paper);
   box-shadow: var(--shadow);
   border: 1px solid rgba(24, 32, 42, 0.06);
+  border-radius: 0.75rem;
   padding: 0.62in 0.72in 0.5in;
 }
 
@@ -26,7 +27,7 @@
 .blog-hero__title,
 .blog-article__title {
   margin: 0.32rem 0 0;
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   line-height: 1.08;
   letter-spacing: 0;
@@ -133,6 +134,7 @@
 .blog-article__body {
   max-width: 42rem;
   margin-top: 1.25rem;
+  font-family: var(--font-blog-body);
 }
 
 .blog-article__body h2 {

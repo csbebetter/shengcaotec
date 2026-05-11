@@ -1,6 +1,7 @@
 const printButton = document.querySelector("[data-print-cv]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const newsList = document.querySelector("[data-news-list]");
+const defaultTheme = window.DEFAULT_THEME || "dark";
 
 if (printButton) {
   printButton.addEventListener("click", () => {
@@ -17,10 +18,10 @@ if (themeToggle) {
     themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
   };
 
-  setTheme(localStorage.getItem("theme") || "light");
+  setTheme(localStorage.getItem("theme") || defaultTheme);
 
   themeToggle.addEventListener("click", () => {
-    const currentTheme = document.documentElement.dataset.theme || "light";
+    const currentTheme = document.documentElement.dataset.theme || defaultTheme;
     setTheme(currentTheme === "dark" ? "light" : "dark");
   });
 }

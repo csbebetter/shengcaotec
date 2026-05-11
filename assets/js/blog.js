@@ -42,6 +42,129 @@ const fetchHtmlFragment = async (url) => {
   return template.content;
 };
 
+const renderTags = (tags = []) => {
+  const tagList = document.createElement("div");
+  tagList.className = "blog-tags";
+
+  for (const tag of tags) {
+    tagList.append(createTextElement("span", "", tag));
+  }
+
+  return tagList;
+};
+
+const parsePostPreview = (slug, fragment) => {
+  const metaItems = [...fragment.querySelectorAll(".blog-article__meta span")].map((item) => item.textContent.trim());
+
+  return {
+    slug,
+    category: fragment.querySelector(".blog-article__category")?.textContent.trim() || "Untitled",
+    title: fragment.querySelector(".blog-article__title")?.textContent.trim() || slug,
+    summary: fragment.querySelector(".blog-article__summary")?.textContent.trim() || "",
+    date: metaItems[0] || "",
+    readingTime: metaItems[1] || "",
+    tags: [...fragment.querySelectorAll(".blog-tags span")].map((tag) => tag.textContent.trim()),
+  };
+};
+
+const renderBlogCard = (post) => {
+  const card = document.createElement("a");
+  card.className = "blog-card";
+  card.href = `blog.html?post=${encodeURIComponent(post.slug)}`;
+
+  card.append(createTextElement("h3", "", post.title));
+
+  if (post.summary) {
+    card.append(createTextElement("p", "", post.summary));
+  }
+
+  const meta = document.createElement("div");
+  meta.className = "blog-card__meta";
+  if (post.date) {
+    meta.append(createTextElement("span", "", post.date));
+  }
+  if (post.readingTime) {
+    meta.append(createTextElement("span", "", post.readingTime));
+  }
+  if (meta.children.length) {
+    card.append(meta);
+  }
+
+  if (post.tags.length) {
+    card.append(renderTags(post.tags));
+  }
+
+  return card;
+};
+
+const renderCategorySection = (category, posts) => {
+  const details = document.createElement("details");
+  details.className = "blog-category";
+  details.dataset.category = category;
+
+  const summary = document.createElement("summary");
+  summary.className = "blog-category__summary";
+  summary.append(createTextElement("span", "blog-category__label", category));
+  summary.append(
+    createTextElement(
+      "span",
+      "blog-category__count",
+      `${posts.length} post${posts.length === 1 ? "" : "s"}`,
+    ),
+  );
+  details.append(summary);
+
+  const postList = document.createElement("div");
+  postList.className = "blog-category__posts";
+  postList.append(...posts.map(renderBlogCard));
+  details.append(postList);
+
+  return details;
+};
+
+const getPostSlugs = () => {
+  return (blogList?.dataset.postSlugs || "")
+    .split(",")
+    .map((slug) => slug.trim())
+    .filter(Boolean);
+};
+
+const loadBlogIndex = async () => {
+  if (!blogList) {
+    return;
+  }
+
+  const activeSlug = new URLSearchParams(window.location.search).get("post")?.trim();
+  if (activeSlug) {
+    return;
+  }
+
+  try {
+    const postPreviews = await Promise.all(
+      getPostSlugs().map(async (slug) => {
+        const fragment = await fetchHtmlFragment(`assets/data/blog/${slug}.html`);
+        return parsePostPreview(slug, fragment);
+      }),
+    );
+
+    const groupedPosts = new Map();
+    for (const post of postPreviews) {
+      if (!groupedPosts.has(post.category)) {
+        groupedPosts.set(post.category, []);
+      }
+      groupedPosts.get(post.category).push(post);
+    }
+
+    blogList.replaceChildren(
+      ...[...groupedPosts.entries()].map(([category, posts]) => renderCategorySection(category, posts)),
+    );
+    restoreBlogCategoryState();
+  } catch (error) {
+    console.error(error);
+    blogList.textContent = "Unable to load blog posts right now.";
+  }
+};
+
 const restoreBlogCategoryState = () => {
   const categoryState = readCategoryState();
 
@@ -94,7 +217,5 @@ const loadBlogArticle = async () => {
   }
 };
 
-if (blogList) {
-  restoreBlogCategoryState();
-}
+loadBlogIndex();
 loadBlogArticle();

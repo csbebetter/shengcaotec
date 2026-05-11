@@ -1,6 +1,5 @@
 const printButton = document.querySelector("[data-print-cv]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
-const newsList = document.querySelector("[data-news-list]");
 const defaultTheme = window.DEFAULT_THEME || "dark";
 
 if (printButton) {
@@ -25,72 +24,6 @@ if (themeToggle) {
     setTheme(currentTheme === "dark" ? "light" : "dark");
   });
 }
-
-const renderNewsItem = (item) => {
-  const article = document.createElement("article");
-  article.className = "news-item";
-
-  const time = document.createElement("time");
-  time.dateTime = item.datetime;
-  time.textContent = item.label;
-
-  const text = document.createElement("p");
-  if (item.icon) {
-    const icon = document.createElement("span");
-    icon.className = "news-item__icon";
-    icon.setAttribute("aria-hidden", "true");
-    icon.textContent = item.icon;
-    text.append(icon, " ");
-  }
-
-  const parts = item.parts || [item.text || ""];
-
-  for (const part of parts) {
-    if (typeof part === "string") {
-      text.append(part);
-      continue;
-    }
-
-    if (part?.type === "link") {
-      const link = document.createElement("a");
-      link.href = part.href;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.textContent = part.text;
-      text.append(link);
-      continue;
-    }
-
-    if (part?.text) {
-      text.append(part.text);
-    }
-  }
-
-  article.append(time, text);
-  return article;
-};
-
-const loadNews = async () => {
-  if (!newsList) {
-    return;
-  }
-
-  newsList.textContent = "Loading news...";
-
-  try {
-    const response = await fetch("assets/data/news.json", { cache: "default" });
-
-    if (!response.ok) {
-      throw new Error(`Failed to load news: ${response.status}`);
-    }
-
-    const items = await response.json();
-    newsList.replaceChildren(...items.map(renderNewsItem));
-  } catch (error) {
-    console.error(error);
-    newsList.textContent = "Unable to load news right now.";
-  }
-};
 
 class SakuraPetal {
   constructor(width, height, resetLimit) {
@@ -250,8 +183,6 @@ class SakuraField {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  loadNews();
-
   const sakuraField = new SakuraField({
     count: 14,
     resetLimit: -1,

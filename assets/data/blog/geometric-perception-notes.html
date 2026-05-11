@@ -1,0 +1,84 @@
+<header class="blog-article__header">
+  <p class="blog-article__category">Research Notes</p>
+  <h1 class="blog-article__title">Notes on Geometric Perception for Large-Scale Robotic Systems</h1>
+  <p class="blog-article__summary">A short reflection on why geometric consistency, calibration, and uncertainty matter when perception systems leave controlled lab environments.</p>
+  <div class="blog-article__meta">
+    <span>May 8, 2026</span>
+    <span>4 min read</span>
+  </div>
+  <div class="blog-tags">
+    <span>3D Perception</span>
+    <span>Calibration</span>
+    <span>Robotics</span>
+  </div>
+</header>
+<article class="blog-article__body">
+  <h2>Why geometry still matters</h2>
+  <p>Large-scale robotic perception is often described through sensors and algorithms, but the practical bottleneck is usually geometric consistency. A system may collect dense point clouds, accurate poses, or high-resolution images, yet the final reconstruction depends on whether all observations share a reliable spatial reference.</p>
+  <p>For example, a rigid transformation can be written inline as \( T \in SE(3) \), which is compact but still makes the assumed motion model explicit.</p>
+  <p>This is especially visible in aircraft surface reconstruction, mobile scanning, and structured field environments. A representative setup is shown in <span class="blog-inline-ref">Figure 1</span>. Small calibration errors can become visible as global deformation, misalignment, or unstable downstream estimation.</p>
+  <figure class="blog-figure blog-figure--align-center" style="max-width: 31rem;">
+    <img class="blog-figure__image" src="assets/photos/Project/COMAC.webp" alt="Aircraft surface reconstruction workflow with measurement equipment and point cloud results." loading="lazy" decoding="async">
+    <figcaption class="blog-figure__caption"><span class="blog-caption__label">Figure 1. </span>A representative large-scale aircraft surface measurement workflow, where geometric consistency across sensing devices determines the quality of the final reconstruction.</figcaption>
+  </figure>
+  <p>A simple registration objective can be expressed as \[ \min_{R,t} \sum_i \left\| \mathbf{p}_i - (R\mathbf{q}_i + t) \right\|^2 \], where the residuals summarize point-wise geometric consistency.</p>
+  <p>Different sensing contexts often share the same geometric concerns while exposing them through distinct surface structures, as illustrated in <span class="blog-inline-ref">Figure 2</span>.</p>
+  <figure class="blog-figure blog-figure-group" style="max-width: 42rem;">
+    <div class="blog-figure-group__grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+      <div class="blog-figure-group__item">
+        <img class="blog-figure-group__image" src="assets/photos/Project/COMAC.webp" alt="Aircraft surface measurement scene." loading="lazy" decoding="async">
+        <p class="blog-figure-group__item-caption">(a) Aircraft skin measurement.</p>
+      </div>
+      <div class="blog-figure-group__item">
+        <img class="blog-figure-group__image" src="assets/photos/Project/PipeChina.webp" alt="Pipeline inspection reconstruction scene." loading="lazy" decoding="async">
+        <p class="blog-figure-group__item-caption">(b) Structured pipe inspection.</p>
+      </div>
+    </div>
+    <figcaption class="blog-figure__caption"><span class="blog-caption__label">Figure 2. </span>Two large-scale perception scenarios where calibration quality strongly affects downstream reconstruction consistency.</figcaption>
+  </figure>
+  <h2>Useful habits</h2>
+  <ul>
+    <li>Treat calibration as part of the perception pipeline, not as a one-time preprocessing step.</li>
+    <li>Record coordinate frames, transformation directions, and units explicitly in code and experiment logs.</li>
+    <li>Evaluate global consistency with independent checks instead of relying only on local residuals.</li>
+  </ul>
+  <p>In practice, I find the sanity checks in <span class="blog-inline-ref">Table 1</span> more useful than adding one more local residual metric, because they reveal whether the whole pipeline shares a stable spatial reference.</p>
+  <figure class="blog-table-figure blog-table-figure--align-center">
+    <div class="blog-table-wrap" style="width: 100%;">
+      <table class="blog-table" style="width: 100%; table-layout: fixed;">
+        <colgroup>
+          <col style="width: 22%;">
+          <col style="width: 30%;">
+          <col style="width: 48%;">
+        </colgroup>
+        <thead>
+          <tr style="height: 3.1rem;">
+            <th>Check</th>
+            <th>Purpose</th>
+            <th>Typical Failure If Ignored</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="height: 3.4rem;">
+            <td>Frame naming and direction</td>
+            <td>Prevent sign errors and inverted transforms</td>
+            <td style="min-width: 15rem;">Point clouds align locally but drift globally.</td>
+          </tr>
+          <tr style="height: 3.7rem;">
+            <td>Unit consistency</td>
+            <td style="text-align: left;">Keep calibration, reconstruction, and evaluation in the same scale.</td>
+            <td style="height: 4.4rem; vertical-align: middle;">Pose estimates appear correct, but the error term \( \|\mathbf{e}\|_2 \) becomes misleading across stages.</td>
+          </tr>
+          <tr style="height: 3.8rem;">
+            <td>Independent geometric validation</td>
+            <td>Verify the reconstruction outside the optimization objective</td>
+            <td>The system overfits the chosen metric and hides structural bias</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption class="blog-table__caption"><span class="blog-caption__label">Table 1. </span>A compact set of checks for maintaining geometric consistency throughout a large-scale perception workflow.</figcaption>
+  </figure>
+  <h2>Open direction</h2>
+  <p>A useful research direction is to connect geometric optimization with uncertainty-aware decision making. Instead of producing a single fused result, the system can expose where the reconstruction is reliable and where additional observations are needed.</p>
+</article>

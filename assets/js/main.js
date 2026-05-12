@@ -183,10 +183,38 @@ class SakuraField {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
   const sakuraField = new SakuraField({
     count: 14,
     resetLimit: -1,
   });
 
   sakuraField.mount();
+});
+
+const loadVisitorMap = () => {
+  const widget = document.querySelector("[data-clustrmaps-widget]");
+
+  if (!widget) {
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.id = "clustrmaps";
+  script.src = "https://clustrmaps.com/map_v2.js?d=6WPCN_Xn65LDths1m8oYZ9yTK-pUgeJutMDhXdS6-dw&cl=ffffff&w=a";
+  script.async = true;
+  script.referrerPolicy = "no-referrer";
+  widget.appendChild(script);
+};
+
+window.addEventListener("load", () => {
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(loadVisitorMap, { timeout: 2500 });
+    return;
+  }
+
+  window.setTimeout(loadVisitorMap, 1200);
 });

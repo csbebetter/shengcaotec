@@ -1,0 +1,37 @@
+<header class="blog-article__header">
+  <p class="blog-article__category">Research Notes</p>
+  <h1 class="blog-article__title">Stitching Aircraft Skin Point Clouds with a Cooperative Target</h1>
+  <p class="blog-article__summary">A research note on using a 6-DoF cooperative target to keep aircraft skin scans geometrically consistent across a distributed measurement system.</p>
+  <div class="blog-article__meta">
+    <span>May 12, 2026</span>
+    <span>3 min read</span>
+  </div>
+  <div class="blog-tags">
+    <span>Point Cloud Registration</span>
+    <span>Aircraft Measurement</span>
+    <span>Distributed Sensing</span>
+  </div>
+</header>
+<article class="blog-article__body">
+  <h2>The practical problem</h2>
+  <p>Aircraft skin measurement is not only a scanning problem. A scanner can capture local surface detail, but the useful result depends on whether scans from different viewpoints can be placed into one stable global frame.</p>
+  <p>In a large measurement field, this becomes difficult because sensors, platforms, and targets each introduce their own coordinate frames. Small pose errors can accumulate into visible seams, surface drift, or inconsistent point cloud stitching.</p>
+
+  <figure class="blog-figure blog-figure--align-center" style="max-width: 34rem;">
+    <img class="blog-figure__image" src="assets/photos/Project/TMech.webp" alt="Aircraft skin point cloud registration research preview." loading="lazy" decoding="async">
+    <figcaption class="blog-figure__caption"><span class="blog-caption__label">Figure 1. </span>A research workflow for aircraft skin point cloud registration in a distributed measurement setup.</figcaption>
+  </figure>
+
+  <h2>Why a cooperative target helps</h2>
+  <p>The core idea is to use a 6-DoF cooperative target as a geometric bridge between the local scanner observations and the global measurement system. Instead of relying only on local point cloud overlap, the target provides pose information that helps constrain how each scan should be transformed.</p>
+  <p>From an engineering point of view, this changes the registration problem from "make nearby surfaces look aligned" to "make all scans agree with a physically observed spatial reference." That distinction matters when the measured surface is large, smooth, and easy to align locally but hard to validate globally.</p>
+
+  <h2>What the method tries to preserve</h2>
+  <ul>
+    <li>Local surface detail from the scanner.</li>
+    <li>Global pose consistency from the distributed measurement system.</li>
+    <li>A clear transformation chain between the target, scanner, and measurement frame.</li>
+  </ul>
+
+  <p>The full manuscript is available as a PDF from the publication list on my homepage.</p>
+</article>

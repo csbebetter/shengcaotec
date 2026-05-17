@@ -288,6 +288,10 @@
   margin-bottom: 0.28rem;
 }
 
+.publication-list li::marker {
+  content: "[" counter(list-item) "] ";
+}
+
 @media (min-width: 781px) {
   .entry__header h3 {
       font-size: 0.95rem;
